@@ -6,4 +6,4 @@ then
   exit
 fi
 echo $branch
-git push appd $branch -f
+git push origin $branch -f
