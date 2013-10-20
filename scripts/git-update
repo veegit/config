@@ -1,0 +1,13 @@
+#!/bin/sh
+branch=`git rev-parse --abbrev-ref HEAD`
+if [ "$branch" = "master" ]
+then
+  echo "You are in master-- only pulling the latest changes"
+  git pull appd master
+  exit
+fi
+echo $branch
+git checkout master
+git pull appd master
+git checkout $branch
+git rebase master

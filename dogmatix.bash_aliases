@@ -1,0 +1,17 @@
+alias pu='pushd'
+alias po='popd'
+alias w='cd $HOME/workspace'
+
+alias heidi='wine /home/vee/workspace/development/heidi/heidisql.exe &'
+alias mysqlad='mysql --host=localhost --user=root --password=password appdirect'
+
+alias tomcat_start='$TOMCAT_HOME/bin/startup.sh'
+alias tomcat_shutdown='$TOMCAT_HOME/bin/shutdown.sh'
+alias tomcat_restart='tomcat_shutdown;sleep 3;tomcat_start'
+alias ltr='ls -ltr'
+alias la='ls -la'
+alias cp='cp -rf'
+alias g='cd ~/workspace/git-local-repo'
+alias hgrep='history | grep'
+alias findtxt='find . -name *.* -print | xargs grep'
+alias ssh_build='ssh -i .ssh/id_rsa nvenkiteswaran@ec2-23-22-252-170.compute-1.amazonaws.com'
