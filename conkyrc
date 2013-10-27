@@ -1,0 +1,84 @@
+#======SETUP========
+background yes
+use_xft yes
+xftfont Sans:size=8
+xftalpha 1
+update_interval 5
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 100 100
+maximum_width 400
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color white
+default_shade_color black
+default_outline_color white
+alignment top_right
+gap_x 10
+gap_y 50
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+ 
+#======TIME========
+TEXT
+${font sans-serif:bold:size=8}${color 00ff00}${time %A}${hr 2}
+${font sans-serif:bold:size=8}${color 00ff00}${time %H} ${time :%M:%S}
+${font sans-serif:bold:size=8}${color 00ff00}${time %d %b %Y}
+ 
+#======SYSTEM========
+${font sans-serif:bold:size=8:}${color 00ff00}SYSTEM${hr 2}
+${font sans-serif:normal:size=8}${color 00ff00}$sysname $kernel $alignr $machine
+Host:$alignr$nodename
+Uptime:$alignr$uptime
+File System: $alignr${fs_type}
+#Battery: $alignr${battery_percent BAT1}%
+#Battery Time: $alignr${battery_time BAT1}
+
+#======MEMORY========
+${font sans-serif:bold:size=8}${color 00ff00}MEMORY ${hr 2}
+${font sans-serif:normal:size=8}${color 00ff00}RAM $alignc $mem / $memmax $alignr $memperc%
+$membar
+
+#======TOP PROCESSES========
+${font sans-serif:bold:size=8}${color 00ff00}TOP PROCESSES ${hr 2}
+${font sans-serif:normal:size=8}${color 00ff00}${top_mem name 1}${alignr}${top_mem mem_res 1}
+${top_mem name 2}${alignr}${top_mem mem_res 2}
+${top_mem name 3}${alignr}${top_mem mem_res 3}
+${top_mem name 4}${alignr}${top_mem mem_res 4}
+${top_mem name 5}${alignr}${top_mem mem_res 5}
+
+#======PROCESSORS========
+${font sans-serif:bold:size=8}${color 00ff00}PROCESSORS ${hr 2}${font sans-serif:normal:size=8}${color 00ff00}
+CPU0: ${cpu cpu0}% ${cpubar cpu0}
+CPU1: ${cpu cpu1}% ${cpubar cpu1}
+ 
+#======DISKS========
+${font sans-serif:bold:size=8}${color 00ff00}DISKS ${hr 2}
+${font sans-serif:normal:size=8}${color 00ff00}/ $alignc ${fs_used /} / ${fs_size /} $alignr${fs_used_perc /}%
+${fs_bar /}
+Home $alignc ${fs_used /home/narayanan} / ${fs_size /home/narayanan} $alignr ${fs_used_perc /home/narayanan}%
+${fs_bar /home/narayanan}
+ 
+#======NETWORK========
+${font sans-serif:bold:size=8}${color 00ff00}NETWORK ${hr 2}
+${font sans-serif:normal:size=8}${color 00ff00}IP address: $alignr ${addr wlan0}
+ESSID: $alignr ${wireless_essid wlan0}
+Connection Quality: $alignr ${wireless_link_qual_perc wlan0}%
+ 
+#======DOWNLOAD========
+#$alignr Download
+#${downspeedgraph wlan0}
+#${downspeed wlan0}/s $alignr ${totaldown wlan0}
+ 
+#======UPLOAD========
+#$alignr Upload
+#${upspeedgraph wlan0}
+#${upspeed wlan0}/s $alignr ${totalup wlan0}
