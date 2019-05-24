@@ -1,0 +1,14 @@
+[push]
+	default = current
+[rerere]
+	enabled = true
+[user]
+	email = vee@vee.com
+	name = Vee
+[alias]
+	files = show --pretty="format:" --name-status
+	co = checkout
+	com = checkout master
+	lsch = diff --name-status -r
+[core]
+	editor = vi
